@@ -1,0 +1,427 @@
+/* =============================================
+   EXPERIENCE PAGE — experience.css
+   K. Janarthanan Portfolio
+   ============================================= */
+
+/* ── PAGE HERO ── */
+.exp-page-hero {
+  padding: 8rem 5% 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.exp-page-hero .blob {
+  position: absolute;
+}
+
+/* ── STATS STRIP ── */
+.exp-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  max-width: 900px;
+  margin: 3rem auto 0;
+}
+.exp-stat {
+  background: var(--zinc-900);
+  border: 1px solid var(--zinc-800);
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  transition: border-color 0.3s;
+}
+.exp-stat:hover {
+  border-color: rgba(74, 128, 196, 0.35);
+}
+.exp-stat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--blue-400), var(--pearl-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+.exp-stat-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--zinc-400);
+}
+
+/* ── FILTER TABS ── */
+.exp-filters {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 3rem 0 2.5rem;
+}
+.exp-filter {
+  padding: 0.45rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border: 1px solid var(--zinc-700);
+  color: var(--zinc-400);
+  background: transparent;
+  transition: all 0.3s;
+  font-family: 'Inter', sans-serif;
+}
+.exp-filter.active {
+  background: linear-gradient(135deg, var(--blue-500), var(--blue-400));
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 0 16px rgba(74, 128, 196, 0.3);
+}
+.exp-filter:not(.active):hover {
+  border-color: rgba(74, 128, 196, 0.4);
+  color: var(--blue-400);
+  background: var(--blue-subtle);
+}
+
+/* ── EXPERIENCE CARDS ── */
+.exp-section {
+  padding: 0 5% 5rem;
+  position: relative;
+}
+.exp-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.exp-card {
+  background: var(--zinc-900);
+  border: 1px solid var(--zinc-800);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  transition: all 0.4s;
+  position: relative;
+}
+.exp-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue-500), var(--pearl-dark));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.exp-card:hover {
+  border-color: rgba(74, 128, 196, 0.4);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(74, 128, 196, 0.08);
+  transform: translateY(-2px);
+}
+.exp-card:hover::before {
+  opacity: 1;
+}
+
+/* Card Header */
+.exp-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.75rem 1.75rem 1.25rem;
+  cursor: pointer;
+}
+.exp-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 0.875rem;
+  background: linear-gradient(135deg, var(--zinc-800), var(--zinc-700));
+  border: 1px solid var(--zinc-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: 'Syne', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--blue-400);
+  transition: border-color 0.3s;
+}
+.exp-card:hover .exp-logo {
+  border-color: rgba(74, 128, 196, 0.4);
+}
+.exp-header-info {
+  flex: 1;
+  min-width: 0;
+}
+.exp-job-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.25rem;
+  transition: color 0.3s;
+}
+.exp-card:hover .exp-job-title {
+  color: var(--blue-400);
+}
+.exp-company {
+  font-size: 0.88rem;
+  color: var(--zinc-300);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.exp-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.exp-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  color: var(--zinc-400);
+}
+.exp-meta-item svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+}
+.exp-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+.exp-date-badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: var(--blue-subtle);
+  border: 1px solid rgba(74, 128, 196, 0.25);
+  color: var(--blue-400);
+  white-space: nowrap;
+}
+.exp-type-badge {
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  background: var(--zinc-800);
+  border: 1px solid var(--zinc-700);
+  color: var(--zinc-400);
+}
+.exp-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  color: var(--zinc-400);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: color 0.2s;
+  padding: 0;
+  margin-top: 0.25rem;
+}
+.exp-toggle-btn:hover {
+  color: var(--blue-400);
+}
+.exp-toggle-btn svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s;
+}
+.exp-toggle-btn.open svg {
+  transform: rotate(180deg);
+}
+
+/* Card Body — Accordion */
+.exp-card-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s;
+}
+.exp-card-body.open {
+  max-height: 1000px;
+}
+.exp-card-body-inner {
+  padding: 0 1.75rem 1.75rem;
+  border-top: 1px solid var(--zinc-800);
+}
+
+.exp-desc {
+  font-size: 0.88rem;
+  color: var(--zinc-300);
+  line-height: 1.8;
+  margin: 1.25rem 0 1.5rem;
+}
+
+/* Section labels inside card */
+.exp-section-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--zinc-400);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.exp-section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--zinc-800);
+}
+
+/* Bullet list */
+.exp-bullets {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+.exp-bullets li {
+  font-size: 0.85rem;
+  color: var(--zinc-300);
+  padding: 0.35rem 0 0.35rem 1.4rem;
+  position: relative;
+  line-height: 1.6;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.04);
+}
+.exp-bullets li:last-child {
+  border-bottom: none;
+}
+.exp-bullets li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--blue-400);
+  font-size: 0.8rem;
+}
+
+/* Two-column layout inside card */
+.exp-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Tags */
+.exp-tags-group {
+  margin-bottom: 1.25rem;
+}
+.exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.exp-tag {
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: var(--blue-subtle);
+  border: 1px solid rgba(74, 128, 196, 0.2);
+  color: var(--blue-400);
+}
+.exp-tag-plain {
+  background: var(--zinc-800);
+  border: 1px solid var(--zinc-700);
+  color: var(--zinc-400);
+}
+
+/* Impact highlight boxes */
+.exp-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.exp-highlight {
+  background: rgba(74, 128, 196, 0.06);
+  border: 1px solid rgba(74, 128, 196, 0.15);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  text-align: center;
+}
+.exp-highlight-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--blue-400);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+.exp-highlight-text {
+  font-size: 0.72rem;
+  color: var(--zinc-400);
+  line-height: 1.4;
+}
+
+/* Current role glow animation */
+.exp-card.current {
+  border-color: rgba(74, 128, 196, 0.2);
+}
+.exp-card.current .exp-date-badge {
+  background: rgba(74, 196, 74, 0.1);
+  border-color: rgba(74, 196, 74, 0.3);
+  color: #4bc44b;
+  animation: pulseGlow 2s infinite;
+}
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: none; }
+  50%       { box-shadow: 0 0 10px rgba(74, 196, 74, 0.3); }
+}
+
+/* ── CTA SECTION ── */
+.exp-cta {
+  text-align: center;
+  padding: 3rem 5% 5rem;
+}
+.exp-cta-box {
+  background: linear-gradient(135deg, rgba(74, 128, 196, 0.12), rgba(74, 128, 196, 0.04));
+  border: 1px solid rgba(74, 128, 196, 0.2);
+  border-radius: 1.25rem;
+  padding: 3rem 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.exp-cta-box h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(135deg, #fff, var(--pearl-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.exp-cta-box p {
+  color: var(--zinc-400);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+.exp-cta-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .exp-stats          { grid-template-columns: 1fr 1fr; }
+  .exp-two-col        { grid-template-columns: 1fr; }
+  .exp-highlights     { grid-template-columns: 1fr 1fr; }
+  .exp-header-right   { display: none; }
+  .exp-card-header    { flex-wrap: wrap; }
+}
+@media (max-width: 480px) {
+  .exp-highlights     { grid-template-columns: 1fr; }
+  .exp-page-hero      { padding: 6rem 4% 2rem; }
+  .exp-section        { padding: 0 4% 4rem; }
+}
